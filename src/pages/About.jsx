@@ -1,59 +1,158 @@
-import React, { useEffect } from 'react';
+import "./About.css";
+import {
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaGithub,
+  FaInstagram,
+  FaLinkedinIn,
+} from "react-icons/fa";
+import { SiTradingview } from "react-icons/si";
+import { FaXTwitter } from "react-icons/fa6";
 
 function About() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
-    <div className="container-custom py-16">
-      <h1 className="text-4xl font-bold mb-8">About Us</h1>
-      
-      <div className="bg-white rounded-lg shadow-md p-8">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-semibold mb-6">Our Story</h2>
-          <p className="text-gray-600 mb-6">
-            Founded in 2024, ShopHub has grown from a small startup to one of the leading e-commerce platforms. Our mission is to provide high-quality products at competitive prices while ensuring an exceptional shopping experience for our customers.
-          </p>
-
-          <h2 className="text-2xl font-semibold mb-6">Our Values</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="text-xl font-semibold mb-3">Quality First</h3>
-              <p className="text-gray-600">We carefully curate our product selection to ensure only the best items make it to our store.</p>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-3">Customer Focus</h3>
-              <p className="text-gray-600">Your satisfaction is our top priority. We're here to help you every step of the way.</p>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-3">Innovation</h3>
-              <p className="text-gray-600">We constantly improve our platform to provide the best shopping experience possible.</p>
+    <div className="aboutPage">
+      <div className="aboutProject">
+        <h1 className="aboutHeading">About this Project</h1>
+        <div className="aboutBio">
+          Our stock market platform is designed to deliver real-time financial
+          data and insights with a focus on usability and performance. This
+          project is the result of dedicated work from a passionate team
+          committed to creating a robust tool for investors and market
+          enthusiasts.
+        </div>
+      </div>
+      <div className="aboutPart2">
+        <div className="creatorHolder">
+          <h1 className="creators">The Creators</h1>
+          <div className="samit">
+            <h3>Samit Khedekar</h3>
+            <div className="aboutBio">
+              Backend Developer - Focused on data handling and API integration.
             </div>
           </div>
-
-          <div className="mt-12">
-            <h2 className="text-2xl font-semibold mb-6">Our Team</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Team Member" className="w-32 h-32 rounded-full mx-auto mb-4 object-cover" />
-                <h3 className="font-semibold">Sarah Johnson</h3>
-                <p className="text-gray-600">CEO</p>
+          <div className="akash">
+            <h3>Akash Sahoo</h3>
+            <div className="aboutBio">
+              Frontend Developer - Specialized in React and modern web
+              technologies.
+            </div>
+          </div>
+        </div>
+        <div className="techHolders">
+          <h1 className="creators">Technologies Used</h1>
+          <div className="techPart1">
+            <div className="react">
+              <div className="techName">React</div>
+              <div className="techLogo">
+                <FaReact />
               </div>
-              <div className="text-center">
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Team Member" className="w-32 h-32 rounded-full mx-auto mb-4 object-cover" />
-                <h3 className="font-semibold">David Chen</h3>
-                <p className="text-gray-600">CTO</p>
+            </div>
+            <div className="node">
+              <div className="techName">Node JS</div>
+              <div className="techLogo">
+                <FaNodeJs />
               </div>
-              <div className="text-center">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Team Member" className="w-32 h-32 rounded-full mx-auto mb-4 object-cover" />
-                <h3 className="font-semibold">Emily Martinez</h3>
-                <p className="text-gray-600">Head of Design</p>
+            </div>
+            <div className="chartjs">
+              <div className="techName">Trading View Charts</div>
+              <div className="techLogo">
+                <SiTradingview />
+              </div>
+            </div>
+          </div>
+          <div className="gitHolder">
+            <div className="git">
+              <div className="techName">Git</div>
+              <div className="techLogo">
+                <FaGitAlt />
+              </div>
+            </div>
+            <div className="github">
+              <div className="techName">Git Hub</div>
+              <div className="techLogo">
+                <FaGithub />
               </div>
             </div>
           </div>
         </div>
       </div>
+      <footer>
+        <h1>Our Social Links</h1>
+        <div className="socialWrapper">
+          <div class="social">
+            <div class="socialContainer">
+              <a
+                target="_blank"
+                href="https://www.instagram.com/s_akash_05_?igsh=MTdpYnJkZG83MHkyZw=="
+              >
+                <FaInstagram />
+                {/* <i class="fa-brands fa-instagram"></i> */}
+              </a>
+            </div>
+            <div class="socialContainer">
+              <a
+                target="_blank"
+                href="https://x.com/akashsahoo7766?t=F4CenyWGckHQVHnH7s7Tbw&s=09"
+              >
+                <FaXTwitter />
+                {/* <i class="fa-brands fa-x-twitter"></i> */}
+              </a>
+            </div>
+            <div class="socialContainer">
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/akash-sahoo-54363a2bb?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              >
+                <FaLinkedinIn />
+                {/* <i class="fa-brands fa-linkedin-in"></i> */}
+              </a>
+            </div>
+            <div class="socialContainer">
+              <a target="_blank" href="https://github.com/akash-s-hub">
+                <FaGithub />
+                {/* <i class="fa-brands fa-github"></i> */}
+              </a>
+            </div>
+          </div>
+          <div class="social">
+            <div class="socialContainer">
+              <a
+                target="_blank"
+                href="https://www.instagram.com/s_akash_05_?igsh=MTdpYnJkZG83MHkyZw=="
+              >
+                <FaInstagram />
+                {/* <i class="fa-brands fa-instagram"></i> */}
+              </a>
+            </div>
+            <div class="socialContainer">
+              <a
+                target="_blank"
+                href="https://x.com/akashsahoo7766?t=F4CenyWGckHQVHnH7s7Tbw&s=09"
+              >
+                <FaXTwitter />
+                {/* <i class="fa-brands fa-x-twitter"></i> */}
+              </a>
+            </div>
+            <div class="socialContainer">
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/akash-sahoo-54363a2bb?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              >
+                <FaLinkedinIn />
+                {/* <i class="fa-brands fa-linkedin-in"></i> */}
+              </a>
+            </div>
+            <div class="socialContainer">
+              <a target="_blank" href="https://github.com/akash-s-hub">
+                <FaGithub />
+                {/* <i class="fa-brands fa-github"></i> */}
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

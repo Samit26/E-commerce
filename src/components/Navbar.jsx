@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ShoppingCart, Menu, X } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { CiSearch } from "react-icons/ci";
+import { RiAccountCircleLine } from "react-icons/ri";
+import { IoCartOutline } from "react-icons/io5";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,7 +16,7 @@ function Navbar() {
     <nav className="bg-white shadow-md">
       <div className="container-custom">
         <div className="flex justify-between items-center h-16">
-          <Link to="/" className="text-2xl font-bold text-primary">
+          <Link to="/" className="text-2xl font-bold text">
             ShopHub
           </Link>
 
@@ -40,24 +43,40 @@ function Navbar() {
               Products
             </Link>
             <Link
+              to="/about"
+              className="text-gray-600 hover:text-primary transition-colors"
+            >
+              About
+            </Link>
+
+          </div>
+
+          <div className="hidden md:flex items-center space-x-8">
+            <Link
+              to="/search"
+              className="text-gray-600 hover:text-primary transition-colors relative"
+            >
+              <CiSearch />
+            </Link>
+            <Link
               to="/cart"
               className="text-gray-600 hover:text-primary transition-colors relative"
             >
-              <ShoppingCart size={24} />
-              {cartItemsCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-secondary text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  {cartItemsCount}
-                </span>
-              )}
+              <IoCartOutline />
+            </Link>
+            <Link
+              to="/search"
+              className="text-gray-600 hover:text-primary transition-colors relative"
+            >
+              <RiAccountCircleLine />
             </Link>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         <div
-          className={`md:hidden ${
-            isMenuOpen ? 'block' : 'hidden'
-          } pb-4 space-y-4`}
+          className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'
+            } pb-4 space-y-4`}
         >
           <Link
             to="/"
