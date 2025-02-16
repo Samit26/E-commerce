@@ -1,23 +1,23 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Star, Truck, Shield, Clock } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, Star, Truck, Shield, Clock } from "lucide-react";
 
 function Home() {
   const features = [
     {
       icon: <Truck className="w-8 h-8 text-primary" />,
-      title: 'Free Shipping',
-      description: 'On orders over $50',
+      title: "Free Shipping",
+      description: "On orders over $50",
     },
     {
       icon: <Shield className="w-8 h-8 text-primary" />,
-      title: 'Secure Payment',
-      description: '100% secure payment',
+      title: "Secure Payment",
+      description: "100% secure payment",
     },
     {
       icon: <Clock className="w-8 h-8 text-primary" />,
-      title: '24/7 Support',
-      description: 'Dedicated support',
+      title: "24/7 Support",
+      description: "Dedicated support",
     },
   ];
 
@@ -28,16 +28,16 @@ function Home() {
         <div
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage:
-              'url(https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundColor: "#F8F8F8",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
           }}
         >
           <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
 
         <div className="container-custom relative z-10 text-white">
+          <h4 className="text-left">New Fashion</h4>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Welcome to ShopHub
           </h1>
@@ -93,7 +93,7 @@ function Home() {
                       <Star
                         key={i}
                         className={`w-4 h-4 ${
-                          i < 4 ? 'text-yellow-400' : 'text-gray-300'
+                          i < 4 ? "text-yellow-400" : "text-gray-300"
                         }`}
                         fill="currentColor"
                       />
