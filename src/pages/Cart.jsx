@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Trash2, Plus, Minus } from 'lucide-react';
-import { useCart } from '../context/CartContext';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Trash2, Plus, Minus } from "lucide-react";
+import { useCart } from "../context/CartContext";
 
 function Cart() {
   const { cart, removeFromCart, updateQuantity, cartTotal } = useCart();
@@ -32,14 +32,14 @@ function Cart() {
               className="flex flex-col sm:flex-row items-center gap-4 bg-white p-4 rounded-lg shadow-sm mb-4"
             >
               <img
-                src={item.image}
+                src={item.imageUrl}
                 alt={item.name}
                 className="w-24 h-24 object-cover rounded"
               />
-              
+
               <div className="flex-grow">
                 <h3 className="text-lg font-semibold">{item.name}</h3>
-                <p className="text-gray-600">${item.price}</p>
+                <p className="text-gray-600">₹{item.price}</p>
               </div>
 
               <div className="flex items-center gap-2">
@@ -62,7 +62,7 @@ function Cart() {
 
               <div className="text-right">
                 <p className="font-semibold mb-2">
-                  ${(item.price * item.quantity).toFixed(2)}
+                  ₹{(item.price * item.quantity).toFixed(2)}
                 </p>
                 <button
                   className="text-red-500 hover:text-red-700"
@@ -78,11 +78,11 @@ function Cart() {
         <div className="lg:col-span-1">
           <div className="bg-white p-6 rounded-lg shadow-sm">
             <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
-            
+
             <div className="space-y-2 mb-4">
               <div className="flex justify-between">
                 <span>Subtotal</span>
-                <span>${cartTotal.toFixed(2)}</span>
+                <span>₹{cartTotal.toFixed(2)}</span>
               </div>
               <div className="flex justify-between">
                 <span>Shipping</span>
@@ -91,7 +91,7 @@ function Cart() {
               <div className="border-t pt-2 mt-2">
                 <div className="flex justify-between font-semibold">
                   <span>Total</span>
-                  <span>${cartTotal.toFixed(2)}</span>
+                  <span>₹{cartTotal.toFixed(2)}</span>
                 </div>
               </div>
             </div>

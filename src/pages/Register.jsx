@@ -45,7 +45,6 @@ export function Register() {
             <h2 className="mt-4 text-3xl font-bold text-gray-900">
               Create an account
             </h2>
-            <p className="mt-2 text-gray-600">Join BlogSphere today</p>
           </div>
 
           {error && (

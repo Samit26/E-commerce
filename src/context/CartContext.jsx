@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState } from "react";
 
 const CartContext = createContext();
 
@@ -7,7 +7,8 @@ export function CartProvider({ children }) {
 
   const addToCart = (product) => {
     setCart((prevCart) => {
-      const existingItem = prevCart.find((item) => item.id === product.id);
+      const existingItem = prevCart.find((item) => item._id === product._id);
+      console.log(product);
       if (existingItem) {
         return prevCart.map((item) =>
           item.id === product.id

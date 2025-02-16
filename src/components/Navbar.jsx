@@ -2,14 +2,17 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ShoppingCart, Menu, X } from "lucide-react";
 import { useCart } from "../context/CartContext";
-import { CiSearch } from "react-icons/ci";
+import { FiLogOut } from "react-icons/fi";
 import { RiAccountCircleLine } from "react-icons/ri";
 import { IoCartOutline } from "react-icons/io5";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { cart } = useCart();
-
+  const handleLogout = () => {
+    localStorage.removeItem("token"); // Clear authentication
+    navigate("/login"); // Redirect to login
+  };
   const cartItemsCount = cart.reduce((total, item) => total + item.quantity, 0);
 
   return (
@@ -42,20 +45,20 @@ function Navbar() {
             >
               Products
             </Link>
-            <Link
+            {/* <Link
               to="/about"
               className="text-gray-600 hover:text-primary transition-colors"
             >
               About
-            </Link>
+            </Link> */}
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
             <Link
-              to="/search"
+              onClick={handleLogout}
               className="text-gray-600 hover:text-primary transition-colors relative"
             >
-              <CiSearch />
+              <FiLogOut />
             </Link>
             <Link
               to="/cart"

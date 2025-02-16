@@ -1,25 +1,25 @@
-import React, { useState } from 'react';
-import { useCart } from '../context/CartContext';
-import { CreditCard, Lock } from 'lucide-react';
+import React, { useState } from "react";
+import { useCart } from "../context/CartContext";
+import { CreditCard, Lock } from "lucide-react";
 
 function Checkout() {
   const { cart, cartTotal, clearCart } = useCart();
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    address: '',
-    city: '',
-    zipCode: '',
-    cardNumber: '',
-    expiryDate: '',
-    cvv: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    address: "",
+    city: "",
+    zipCode: "",
+    cardNumber: "",
+    expiryDate: "",
+    cvv: "",
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Here you would typically handle payment processing
-    alert('Order placed successfully!');
+    alert("Order placed successfully!");
     clearCart();
     // Redirect to success page or home
   };
@@ -37,7 +37,9 @@ function Checkout() {
         <div>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h2 className="text-xl font-semibold mb-4">Shipping Information</h2>
+              <h2 className="text-xl font-semibold mb-4">
+                Shipping Information
+              </h2>
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -158,7 +160,7 @@ function Checkout() {
                     <input
                       type="text"
                       name="expiryDate"
-                      value={formData .expiryDate}
+                      value={formData.expiryDate}
                       onChange={handleChange}
                       required
                       placeholder="MM/YY"
@@ -192,10 +194,13 @@ function Checkout() {
         <div>
           <div className="bg-white p-6 rounded-lg shadow-sm">
             <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
-            
+
             <div className="space-y-4">
               {cart.map((item) => (
-                <div key={item.id} className="flex justify-between items-center">
+                <div
+                  key={item.id}
+                  className="flex justify-between items-center"
+                >
                   <div className="flex items-center">
                     <img
                       src={item.image}

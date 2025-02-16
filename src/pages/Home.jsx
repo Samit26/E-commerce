@@ -119,7 +119,7 @@ function Home() {
       {/* Featured Products Preview */}
       <section className="py-16">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold mb-8">Categories</h2>
+          <h2 className="text-3xl font-bold mb-8">Products</h2>
 
           {loading ? (
             <p className="text-center">Loading products...</p>
@@ -154,9 +154,9 @@ function Home() {
                         {product.name}
                       </h3>
                       <p className="text-gray-600 mb-2">₹ {product.price}</p>
-                      <button className="btn-primary w-full">
+                      {/* <button className="btn-primary w-full">
                         Add to Cart
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                 ))

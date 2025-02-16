@@ -41,6 +41,7 @@ function App() {
           <Navbar />
           <main className="flex-grow">
             <Routes>
+              {/* <Route path="/logout"  /> */}
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/" element={<ProtectedRoute element={<Home />} />} />
