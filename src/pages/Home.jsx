@@ -1,8 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { ArrowRight, Star, Truck, Shield, Clock } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Star } from "lucide-react";
 
 function Home() {
+  const [products, setProducts] = useState([]); // State for storing fetched products
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/api/products");
+        const data = await response.json();
+        setProducts(data); // Set products state
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
   return (
     <div>
       {/* Hero Section */}
@@ -102,36 +120,53 @@ function Home() {
       <section className="py-16">
         <div className="container-custom">
           <h2 className="text-3xl font-bold mb-8">Categories</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {[1, 2, 3, 4].map((item) => (
-              <div
-                key={item}
-                className="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105"
-              >
-                <img
-                  src={`https://images.unsplash.com/photo-${item}?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60`}
-                  alt="Product"
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-4">
-                  <div className="flex items-center mb-2">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className={`w-4 h-4 ${
-                          i < 4 ? "text-yellow-400" : "text-gray-300"
-                        }`}
-                        fill="currentColor"
-                      />
-                    ))}
+
+          {loading ? (
+            <p className="text-center">Loading products...</p>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {products.length > 0 ? (
+                products.map((product) => (
+                  <div
+                    key={product._id} // Use MongoDB _id as the key
+                    className="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105"
+                  >
+                    <img
+                      src={product.imageUrl} // Assuming your product has an `image` field
+                      alt={product.name}
+                      className="w-full h-48 object-cover"
+                    />
+                    <div className="p-4">
+                      <div className="flex items-center mb-2">
+                        {/* {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className={`w-4 h-4 ${
+                              i < product.rating
+                                ? "text-yellow-400"
+                                : "text-gray-300"
+                            }`}
+                            fill="currentColor"
+                          />
+                        ))} */}
+                      </div>
+                      <h3 className="text-lg font-semibold mb-2">
+                        {product.name}
+                      </h3>
+                      <p className="text-gray-600 mb-2">₹ {product.price}</p>
+                      <button className="btn-primary w-full">
+                        Add to Cart
+                      </button>
+                    </div>
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">Product Name</h3>
-                  <p className="text-gray-600 mb-2">$99.99</p>
-                  <button className="btn-primary w-full">Add to Cart</button>
-                </div>
-              </div>
-            ))}
-          </div>
+                ))
+              ) : (
+                <p className="text-center col-span-full">
+                  No products available
+                </p>
+              )}
+            </div>
+          )}
         </div>
       </section>
     </div>

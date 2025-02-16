@@ -133,6 +133,8 @@ function StarRating({ rating }) {
           className={`h-4 w-4 ${
             index < rating ? "text-yellow-400" : "text-gray-300"
           }`}
+          stroke="currentColor"
+          //   fill={index < Math.floor(product.rating) ? "yellow" : "none"}
         />
       ))}
     </div>

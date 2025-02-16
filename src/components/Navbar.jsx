@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { ShoppingCart, Menu, X } from 'lucide-react';
-import { useCart } from '../context/CartContext';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { ShoppingCart, Menu, X } from "lucide-react";
+import { useCart } from "../context/CartContext";
 import { CiSearch } from "react-icons/ci";
 import { RiAccountCircleLine } from "react-icons/ri";
 import { IoCartOutline } from "react-icons/io5";
@@ -48,7 +48,6 @@ function Navbar() {
             >
               About
             </Link>
-
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -65,7 +64,7 @@ function Navbar() {
               <IoCartOutline />
             </Link>
             <Link
-              to="/search"
+              to="/login"
               className="text-gray-600 hover:text-primary transition-colors relative"
             >
               <RiAccountCircleLine />
@@ -75,8 +74,9 @@ function Navbar() {
 
         {/* Mobile Navigation */}
         <div
-          className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'
-            } pb-4 space-y-4`}
+          className={`md:hidden ${
+            isMenuOpen ? "block" : "hidden"
+          } pb-4 space-y-4`}
         >
           <Link
             to="/"
