@@ -14,6 +14,7 @@ import Returns from "./pages/Returns";
 import { CartProvider } from "./context/CartContext";
 import { Login } from "./pages/Login";
 import { Register } from "./pages/Register";
+import ProductPage from "./pages/ProductPage";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
           <main className="flex-grow">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/products" element={<Products />} />
+              <Route path="/products" element={<ProductPage />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
