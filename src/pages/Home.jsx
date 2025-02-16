@@ -1,25 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Star, Truck, Shield, Clock } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, Star, Truck, Shield, Clock } from "lucide-react";
 
 function Home() {
-  // const features = [
-  //   {
-  //     icon: <Truck className="w-8 h-8 text-primary" />,
-  //     title: 'Free Shipping',
-  //     description: 'On orders over $50',
-  //   },
-  //   {
-  //     icon: <Shield className="w-8 h-8 text-primary" />,
-  //     title: 'Secure Payment',
-  //     description: '100% secure payment',
-  //   },
-  //   {
-  //     icon: <Clock className="w-8 h-8 text-primary" />,
-  //     title: '24/7 Support',
-  //     description: 'Dedicated support',
-  //   },
-  // ];
+  const features = [
+    {
+      icon: <Truck className="w-8 h-8 text-primary" />,
+      title: 'Free Shipping',
+      description: 'On orders over $50',
+    },
+    {
+      icon: <Shield className="w-8 h-8 text-primary" />,
+      title: 'Secure Payment',
+      description: '100% secure payment',
+    },
+    {
+      icon: <Clock className="w-8 h-8 text-primary" />,
+      title: '24/7 Support',
+      description: 'Dedicated support',
+    },
+  ];
 
   return (
     <div>
@@ -30,61 +30,16 @@ function Home() {
         <div
           className="absolute inset-0 z-0"
           style={{
-            height: "100%",
-            width: "100%",
-            backgroundColor: "rgb(248 248 248)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center"
+            backgroundImage:
+              'url(https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
           }}
         >
-          <div className='' style={{
-            height: "80%",
-            width: "80%"
-          }}>
-
-            <div className="text" style={{
-              fontSize: "3rem",
-              marginBottom: "1rem"
-            }}>New Products</div>
-
-            <div className="products" style={{
-              height: "100%",
-              width: "100%",
-              display: "flex",
-            }}>
-              <div className="title" style={{
-                height: "100%",
-                width: "60%",
-                fontSize: "1.7rem",
-                padding: "1rem 0"
-              }}>
-                MacBook Pro 14” and 16”
-                <div style={{
-                  fontSize: "1.2rem"
-                }}>
-                  M4, M4 Pro or M4 Max chip
-                </div>
-                <div style={{
-                  fontSize: "0.8rem"
-                }}>
-                  Available in Space black and Silver
-                  The most advanced Mac laptops for demanding workflows.
-                </div>
-                From ₹169900.00*
-              </div>
-              <div className="image"
-                style={{ backgroundImage: "", backgroundSize: "contain", backgroundPosition: "center", height: "70%", width: "50%" }}>
-                <img src="https://www.apple.com/v/mac/home/cb/images/overview/select/product_tile_mbp_14_16__bkl8zusnkpw2_large_2x.png" alt="" />
-              </div>
-            </div>
-          </div>
-          {/* <div className="absolute inset-0 bg-black opacity-50"></div> */}
+          <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
 
-        {/* <div className="container-custom relative z-10 text-white" style={{
-          backgroundColor: "rgb(248 248 248)"
-        }}>
+        <div className="container-custom relative z-10 text-white">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Welcome to ShopHub
           </h1>
